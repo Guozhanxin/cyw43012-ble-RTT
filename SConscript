@@ -64,6 +64,11 @@ path += [
 LIBPATH = [cwd + '/btstack/stack/COMPONENT_WICED_BLE/COMPONENT_CM4/COMPONENT_HARDFP/TOOLCHAIN_GCC_ARM']
 LIBS = ['btstack']
 
-group = DefineGroup('Libraries', src, depend=[''], CPPPATH=path, LIBPATH=LIBPATH, LIBS=LIBS)
+group = DefineGroup('btstack_ifx', src, depend=[''], CPPPATH=path, LIBPATH=LIBPATH, LIBS=LIBS)
+
+list = os.listdir(cwd)
+for item in list:
+    if os.path.isfile(os.path.join(cwd, item, 'SConscript')):
+        group = group + SConscript(os.path.join(item, 'SConscript'))
 
 Return('group')
