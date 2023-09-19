@@ -61,7 +61,7 @@ path += [
 LIBPATH = [cwd + '/btstack/stack/COMPONENT_WICED_BLE/COMPONENT_CM4/COMPONENT_HARDFP/TOOLCHAIN_GCC_ARM']
 LIBS = ['btstack']
 
-group = DefineGroup('btstack_ifx', src, depend=[''], CPPPATH=path, LIBPATH=LIBPATH, LIBS=LIBS)
+group = DefineGroup('btstack_ifx', src, depend=['PKG_USING_BT_CYW43012'], CPPPATH=path, LIBPATH=LIBPATH, LIBS=LIBS)
 
 list = os.listdir(cwd)
 for item in list:
