@@ -46,12 +46,10 @@ path += [
         cwd + "/abstraction-rtos/include/COMPONENT_FREERTOS"
         ]
 src += [
-        "kv-store/mtb_kvstore.c", 
-        "retarget-io/cy_retarget_io.c"
+        "kv-store/mtb_kvstore.c"
         ]
 
 path += [
-        cwd + "/retarget-io",
         cwd + "/kv-store"
         ]
 
@@ -59,7 +57,6 @@ path += [
         cwd + "/btstack/wiced_include",
         cwd + "/btstack"
         ]
-# TOODO add btstack lib
 
 LIBPATH = [cwd + '/btstack/stack/COMPONENT_WICED_BLE/COMPONENT_CM4/COMPONENT_HARDFP/TOOLCHAIN_GCC_ARM']
 LIBS = ['btstack']
